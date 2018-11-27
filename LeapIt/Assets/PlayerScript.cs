@@ -1,35 +1,52 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerScript : MonoBehaviour {
 
     public int startMoves;
-    public static int moves; 
+    public static int moves;
+    public Collider coll;
+    public bool falling =false;
 
     // Use this for initialization
     void Start () {
         moves = startMoves;
+        coll = GetComponent<Collider>();
+
     }
 	
 	// Update is called once per frame
 	void Update () {
 
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if(transform.position.y<-2) //restart level if fallen down
         {
-            Move(new Vector3(0, 0, 1));
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
-        if (Input.GetKeyDown(KeyCode.DownArrow))
+        if(transform.position.y > 2.5)//go to next level if platform rises you up
         {
-            Move(new Vector3(0, 0, -1));
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
+
+        if (!falling) //if not falling, move the player the direction they press.
         {
-            Move(new Vector3(-1, 0, 0));
-        }
-        if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            Move(new Vector3(1, 0, 0));
+            if (Input.GetKeyDown(KeyCode.UpArrow))
+            {
+                Move(new Vector3(0, 0, 1));
+            }
+            if (Input.GetKeyDown(KeyCode.DownArrow))
+            {
+                Move(new Vector3(0, 0, -1));
+            }
+            if (Input.GetKeyDown(KeyCode.LeftArrow))
+            {
+                Move(new Vector3(-1, 0, 0));
+            }
+            if (Input.GetKeyDown(KeyCode.RightArrow))
+            {
+                Move(new Vector3(1, 0, 0));
+            }
         }
     }
 
@@ -42,5 +59,22 @@ public class PlayerScript : MonoBehaviour {
         }
       
         
+    }
+    void OnTriggerExit(Collider other)
+    {
+        coll.attachedRigidbody.useGravity = true;
+        falling = true;
+     
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        coll.attachedRigidbody.useGravity = false;
+        falling = false;
+    }
+
+    void OnGUI()
+    {
+        GUI.Label(new Rect(10, 10, 100, 20), "Moves Left: "+moves.ToString());
     }
 }

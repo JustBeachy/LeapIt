@@ -1,10 +1,10 @@
 ﻿<Properties StartupConfiguration="{44BD4912-5491-A5D8-2D4C-1B423AABB3DB}|">
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/GoalScript.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/FloorScript.cs">
     <Files>
-      <File FileName="Assets/PlayerScript.cs" Line="27" Column="41" />
-      <File FileName="Assets/FloorScript.cs" Line="18" Column="4" />
-      <File FileName="Assets/GoalScript.cs" Line="16" Column="2" />
+      <File FileName="Assets/PlayerScript.cs" Line="9" Column="1" />
+      <File FileName="Assets/FloorScript.cs" Line="24" Column="1" />
+      <File FileName="Assets/GoalScript.cs" Line="17" Column="26" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
