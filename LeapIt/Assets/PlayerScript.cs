@@ -20,6 +20,12 @@ public class PlayerScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+        /*if(moves<1)
+        {
+            coll.attachedRigidbody.useGravity = true;
+            falling = true;
+        }*/
+
         if(transform.position.y<-2) //restart level if fallen down
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
@@ -64,7 +70,7 @@ public class PlayerScript : MonoBehaviour {
     {
         coll.attachedRigidbody.useGravity = true;
         falling = true;
-     
+
     }
 
     void OnTriggerEnter(Collider other)
@@ -75,6 +81,6 @@ public class PlayerScript : MonoBehaviour {
 
     void OnGUI()
     {
-        GUI.Label(new Rect(10, 10, 100, 20), "Moves Left: "+moves.ToString());
+        GUI.Label(new Rect(50, 50, 500, 100), "Moves Left: "+moves.ToString());
     }
 }

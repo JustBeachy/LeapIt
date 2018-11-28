@@ -27,7 +27,7 @@ GameObject:
   - component: {fileID: 54391984160633756}
   m_Layer: 0
   m_Name: Floor
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -138,3 +138,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coll: {fileID: 0}
+  lives: 0
+  flag: 1
+  materials:
+  - {fileID: 2100000, guid: 778fdcd1bca0446068738e9bf92150e8, type: 2}
+  - {fileID: 2100000, guid: f6fe894f47c974968be9bb0163b06d27, type: 2}
+  - {fileID: 2100000, guid: 17ca617c6c0344b11a3abd7b647fdea4, type: 2}
+  - {fileID: 2100000, guid: cbe12a90da1ca46b8b8ca05991c80cbe, type: 2}
