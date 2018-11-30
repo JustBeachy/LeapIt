@@ -30,7 +30,7 @@ public class PlayerScript : MonoBehaviour {
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
-        if(transform.position.y > 2.5)//go to next level if platform rises you up
+        if(transform.position.y > 1)//go to next level if platform rises you up
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
